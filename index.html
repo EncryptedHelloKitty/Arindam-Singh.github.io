@@ -19,6 +19,8 @@
             --glass-border: rgba(0, 255, 65, 0.3);
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
         body {
             font-family: 'Courier New', monospace;
             background: var(--bg-black);
@@ -106,11 +108,13 @@
 
         /* Section Headings with Typing Effect */
         h2.typing {
+            font-family: 'Orbitron', monospace;
             color: var(--neon-green);
-            font-size: 2em;
+            font-size: 2.2em;
+            font-weight: 700;
             margin-bottom: 30px;
-            font-weight: bold;
             min-height: 1.2em;
+            letter-spacing: 0.03em;
         }
 
         h2.typing .cursor {
@@ -128,20 +132,26 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 20px 50px;
+            padding: 100px 20px 100px;
         }
 
         .hero-content h1 {
-            font-size: 3.5em;
+            font-family: 'Orbitron', monospace;
+            font-size: 4em;
+            font-weight: 900;
             color: var(--neon-green);
             margin-bottom: 15px;
             text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+            letter-spacing: 0.05em;
         }
 
         .hero-content .subtitle {
+            font-family: 'Orbitron', monospace;
             font-size: 1.3em;
+            font-weight: 500;
             color: #b0b0b0;
             margin-bottom: 30px;
+            letter-spacing: 0.02em;
         }
 
         .terminal-text {
@@ -172,41 +182,78 @@
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .skill-category {
-            background: rgba(0, 255, 65, 0.05);
+            background: rgba(0, 40, 20, 0.3);
             border: 1px solid var(--glass-border);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .skill-category:hover {
-            background: rgba(0, 255, 65, 0.1);
-            transform: translateY(-5px);
+            background: rgba(0, 60, 30, 0.4);
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
         }
 
         .skill-category h3 {
+            font-family: 'Orbitron', monospace;
             color: var(--neon-green);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.02em;
         }
 
-        .skill-category ul {
-            list-style: none;
+        .skill-category h3:before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green);
         }
 
-        .skill-category ul li {
-            padding: 5px 0;
-            color: #c0c0c0;
+        .skill-item {
+            margin-bottom: 18px;
         }
 
-        .skill-category ul li:before {
-            content: '> ';
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .skill-percentage {
             color: var(--neon-green);
+            font-weight: bold;
+        }
+
+        .skill-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 255, 65, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--dark-green), var(--neon-green));
+            border-radius: 4px;
+            transition: width 1.5s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
         }
 
         /* Experience Timeline */
@@ -230,8 +277,11 @@
         }
 
         .timeline-item h3 {
+            font-family: 'Orbitron', monospace;
             color: var(--neon-green);
             margin-bottom: 5px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .timeline-item .date {
@@ -263,8 +313,11 @@
         }
 
         .project-card h3 {
+            font-family: 'Orbitron', monospace;
             color: var(--neon-green);
             margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .project-card p {
@@ -306,9 +359,12 @@
         }
 
         .cert-card h3 {
+            font-family: 'Orbitron', monospace;
             color: var(--neon-green);
             margin-bottom: 10px;
             font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .cert-card .issuer {
@@ -420,7 +476,11 @@
             }
 
             .hero-content h1 {
-                font-size: 2.5em;
+                font-size: 2.8em;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1em;
             }
 
             .glass-card {
@@ -463,7 +523,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ ABOUT ME ]"></h2>
             <p>I am a B.Tech Computer Science Engineering student specializing in Cybersecurity. My passion lies in exploring the depths of web security, network security, and vulnerability assessment. I believe in ethical hacking and building secure systems that protect user data and privacy.</p>
@@ -472,47 +532,170 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" style="padding: 120px 0;">
         <div class="glass-card">
-            <h2 class="typing" data-text="[ SKILL MATRIX ]"></h2>
+            <h2 class="typing" data-text="> SKILL MATRIX"></h2>
+            <p style="color: #808080; margin-bottom: 20px; font-size: 0.9em;">// Capability Assessment</p>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>Java</li>
-                        <li>SQL</li>
-                        <li>Bash Scripting</li>
-                    </ul>
+                    <h3><> Programming</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="93"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C++</span>
+                            <span class="skill-percentage">86%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="86"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java</span>
+                            <span class="skill-percentage">81%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="81"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL</span>
+                            <span class="skill-percentage">83%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="83"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Bash Scripting</span>
+                            <span class="skill-percentage">96%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="96"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Cybersecurity</h3>
-                    <ul>
-                        <li>OWASP Top 10</li>
-                        <li>Web App Testing</li>
-                        <li>Network Security</li>
-                        <li>Vulnerability Assessment</li>
-                        <li>Penetration Testing</li>
-                    </ul>
+                    <h3>⬡ Cybersecurity</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Network Security</span>
+                            <span class="skill-percentage">91%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="91"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>OWASP Top 10</span>
+                            <span class="skill-percentage">98%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="98"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Web App Testing</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Vulnerability Assessment</span>
+                            <span class="skill-percentage">86%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="86"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Digital Forensics</span>
+                            <span class="skill-percentage">81%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="81"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <ul>
-                        <li>Kali Linux</li>
-                        <li>Burp Suite</li>
-                        <li>Nmap</li>
-                        <li>Metasploit</li>
-                        <li>Wireshark</li>
-                        <li>GitHub</li>
-                    </ul>
+                    <h3>>_ Tools & OS</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Kali Linux</span>
+                            <span class="skill-percentage">89%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="89"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Burp Suite</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Nmap</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Wireshark</span>
+                            <span class="skill-percentage">83%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="83"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Metasploit</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git/GitHub</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="88"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
+    <section id="experience" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ SYSTEM LOGS ]"></h2>
             <div class="timeline-item">
@@ -534,7 +717,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ OPERATIONS ]"></h2>
             <div class="projects-grid">
@@ -558,7 +741,7 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications">
+    <section id="certifications" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ CREDENTIALS ]"></h2>
             <div class="certs-grid">
@@ -591,7 +774,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" style="padding: 120px 0 150px;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ INITIATE UPLINK ]"></h2>
             <div class="contact-info">
@@ -731,6 +914,23 @@
         }, { threshold: 0.5 });
 
         typingHeadings.forEach(heading => typingObserver.observe(heading));
+
+        // Skill Bar Animation
+        const skillBars = document.querySelectorAll('.skill-bar-fill');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.getAttribute('data-width');
+                    entry.target.style.width = width + '%';
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            bar.style.width = '0%';
+            skillObserver.observe(bar);
+        });
 
         // Certificate Modal
         const modal = document.getElementById('certModal');
