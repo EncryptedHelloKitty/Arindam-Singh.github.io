@@ -656,7 +656,13 @@
                 <div class="lock-body"></div>
                 <div class="lock-shackle"></div>
             </div>
-            <div class="loading-text" id="loadingText"></div>
+            <div class="loading-text">
+                <div class="loading-line">> Accessing dark web portal...</div>
+                <div class="loading-line">> Establishing encrypted connection...</div>
+                <div class="loading-line">> Bypassing security protocols...</div>
+                <div class="loading-line">> Decrypting identity matrix...</div>
+                <div class="loading-line glitch-effect">> ACCESS GRANTED</div>
+            </div>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
@@ -1055,51 +1061,6 @@
             modal.classList.remove('active');
         }
     });
-    const loadingLines = [
-    "> Accessing dark web portal...",
-    "> Establishing encrypted connection...",
-    "> Bypassing security protocols...",
-    "> Decrypting identity matrix...",
-    "> ACCESS GRANTED"
-];
-
-const loadingTextContainer = document.getElementById("loadingText");
-let lineIndex = 0;
-let charIndex = 0;
-
-function typeLoadingLine() {
-    if (lineIndex >= loadingLines.length) return;
-
-    if (charIndex === 0) {
-        const lineDiv = document.createElement("div");
-        lineDiv.className = "loading-line";
-        loadingTextContainer.appendChild(lineDiv);
-    }
-
-    const currentLineDiv = loadingTextContainer.lastChild;
-    currentLineDiv.innerHTML =
-        loadingLines[lineIndex].substring(0, charIndex + 1) +
-        '<span class="typing-cursor">|</span>';
-
-    charIndex++;
-
-    if (charIndex === loadingLines[lineIndex].length) {
-        currentLineDiv.innerHTML = loadingLines[lineIndex];
-
-        if (loadingLines[lineIndex].includes("ACCESS GRANTED")) {
-            currentLineDiv.classList.add("glitch-effect");
-        }
-
-        charIndex = 0;
-        lineIndex++;
-        setTimeout(typeLoadingLine, 80);
-    } else {
-        setTimeout(typeLoadingLine, 10);
-    }
-}
-
-window.addEventListener("load", () => {
-    setTimeout(typeLoadingLine, 300);
 });
 </script>
 </body>
