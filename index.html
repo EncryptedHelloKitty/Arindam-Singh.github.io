@@ -29,7 +29,6 @@
             line-height: 1.6;
         }
 
-        /* Animated Background Canvas */
         #starfield {
             position: fixed;
             top: 0;
@@ -39,7 +38,6 @@
             z-index: -1;
         }
 
-        /* Navigation Bar */
         nav {
             position: fixed;
             top: 20px;
@@ -81,7 +79,6 @@
             transform: scale(1.1);
         }
 
-        /* Glass Card Container */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
@@ -106,7 +103,6 @@
             border-color: var(--neon-green);
         }
 
-        /* Section Headings with Typing Effect */
         h2.typing {
             font-family: 'Orbitron', monospace;
             color: var(--neon-green);
@@ -125,7 +121,6 @@
             50% { opacity: 0; }
         }
 
-        /* Hero Section */
         #home {
             min-height: 100vh;
             display: flex;
@@ -144,11 +139,6 @@
             text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
             letter-spacing: 0.05em;
             min-height: 1.2em;
-        }
-        
-        .hero-content h1.decrypting {
-            color: var(--neon-green);
-            text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
         }
 
         .hero-content .subtitle {
@@ -185,7 +175,6 @@
             box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -229,40 +218,28 @@
         }
 
         .skill-item {
-            margin-bottom: 18px;
+            background: rgba(0, 255, 65, 0.08);
+            border: 1px solid rgba(0, 255, 65, 0.2);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 255, 65, 0.15);
+            border-color: var(--neon-green);
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
         }
 
         .skill-name {
-            display: flex;
-            justify-content: space-between;
             color: #e0e0e0;
-            margin-bottom: 8px;
             font-size: 0.95em;
+            text-align: left;
         }
 
-        .skill-percentage {
-            color: var(--neon-green);
-            font-weight: bold;
-        }
-
-        .skill-bar-bg {
-            width: 100%;
-            height: 8px;
-            background: rgba(0, 255, 65, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--dark-green), var(--neon-green));
-            border-radius: 4px;
-            transition: width 1.5s ease;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-        }
-
-        /* Experience Timeline */
         .timeline-item {
             border-left: 2px solid var(--neon-green);
             padding-left: 25px;
@@ -296,7 +273,6 @@
             margin-bottom: 10px;
         }
 
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -306,11 +282,11 @@
 
         .project-card {
             background: rgba(0, 255, 65, 0.05);
-        border: 1px solid var(--glass-border);
-        padding: 0;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        overflow: hidden;
+            border: 1px solid var(--glass-border);
+            padding: 0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
         .project-image {
@@ -359,7 +335,6 @@
             text-shadow: 0 0 10px var(--neon-green);
         }
 
-        /* Certifications Grid */
         .certs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -413,7 +388,6 @@
             text-shadow: 0 0 10px var(--neon-green);
         }
 
-        /* Certificate Modal */
         .modal {
             display: none;
             position: fixed;
@@ -466,7 +440,6 @@
             margin-bottom: 20px;
         }
 
-        /* Contact Section */
         .contact-info {
             text-align: center;
             font-size: 1.1em;
@@ -486,7 +459,6 @@
             text-shadow: 0 0 10px var(--neon-green);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             nav ul {
                 flex-wrap: wrap;
@@ -519,10 +491,8 @@
     </style>
 </head>
 <body>
-    <!-- Animated Starfield Background -->
     <canvas id="starfield"></canvas>
 
-    <!-- Navigation -->
     <nav id="navbar">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -535,7 +505,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home">
         <div class="hero-content">
             <h1 id="heroName">ARINDAM SINGH</h1>
@@ -546,7 +515,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ ABOUT ME ]"></h2>
@@ -556,7 +524,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="> SKILL MATRIX"></h2>
@@ -564,206 +531,52 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><> Programming</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Python</span>
-                            <span class="skill-percentage">93%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="93"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>C++</span>
-                            <span class="skill-percentage">86%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="86"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Java</span>
-                            <span class="skill-percentage">81%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="81"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>SQL</span>
-                            <span class="skill-percentage">83%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="83"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Bash Scripting</span>
-                            <span class="skill-percentage">96%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="96"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><div class="skill-name">Python</div></div>
+                    <div class="skill-item"><div class="skill-name">C++</div></div>
+                    <div class="skill-item"><div class="skill-name">Java</div></div>
+                    <div class="skill-item"><div class="skill-name">SQL</div></div>
+                    <div class="skill-item"><div class="skill-name">Bash Scripting</div></div>
                 </div>
                 <div class="skill-category">
                     <h3>⬡ Cybersecurity</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Network Security</span>
-                            <span class="skill-percentage">91%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="91"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>OWASP Top 10</span>
-                            <span class="skill-percentage">98%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="98"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Web App Testing</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Vulnerability Assessment</span>
-                            <span class="skill-percentage">86%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="86"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Digital Forensics</span>
-                            <span class="skill-percentage">81%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="81"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Reverse Engineering</span>
-                            <span class="skill-percentage">79%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="79"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><div class="skill-name">Network Security</div></div>
+                    <div class="skill-item"><div class="skill-name">OWASP Top 10</div></div>
+                    <div class="skill-item"><div class="skill-name">Web App Testing</div></div>
+                    <div class="skill-item"><div class="skill-name">Vulnerability Assessment</div></div>
+                    <div class="skill-item"><div class="skill-name">Digital Forensics</div></div>
+                    <div class="skill-item"><div class="skill-name">Reverse Engineering</div></div>
                 </div>
                 <div class="skill-category">
                     <h3>>_ Tools & OS</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Kali Linux</span>
-                            <span class="skill-percentage">98%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="98"></div>
-                        </div>
-                    </div>
-                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Windows</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Burp Suite</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Open VAS</span>
-                            <span class="skill-percentage">88%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="88"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Wireshark</span>
-                            <span class="skill-percentage">83%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="83"></div>
-                        </div>
-                    </div>
-                     <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Recon-ng</span>
-                            <span class="skill-percentage">83%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="83"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Metasploit</span>
-                            <span class="skill-percentage">95%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>OWASP ZAP</span>
-                            <span class="skill-percentage">89%</span>
-                        </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-width="89"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><div class="skill-name">Kali Linux</div></div>
+                    <div class="skill-item"><div class="skill-name">Windows</div></div>
+                    <div class="skill-item"><div class="skill-name">Burp Suite</div></div>
+                    <div class="skill-item"><div class="skill-name">Open VAS</div></div>
+                    <div class="skill-item"><div class="skill-name">Wireshark</div></div>
+                    <div class="skill-item"><div class="skill-name">Recon-ng</div></div>
+                    <div class="skill-item"><div class="skill-name">Metasploit</div></div>
+                    <div class="skill-item"><div class="skill-name">OWASP ZAP</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ SYSTEM LOGS ]"></h2>
             <div class="timeline-item">
                 <h3>OffSec Gauntlet CTF</h3>
-                <p class="date">7th Octuber 2025 - 2nd December 2025</p>
+                <p class="date">7th October 2024 - 2nd December 2024</p>
                 <p>Achieved 45th rank out of ~9,000 participants in the OffSec Gauntlet Capture The Flag competition. Solved hands-on challenges focused on web application security, exploitation, reconnaissance, and vulnerability analysis, demonstrating strong practical skills in penetration testing, problem-solving, and offensive security techniques under time constraints.</p>
             </div>
             <div class="timeline-item">
                 <h3>Cybersecurity Analyst Intern at Centre For Railway Information Systems (CRIS)</h3>
-                <p class="date">2nd June 2025 - 1st August 2025</p>
+                <p class="date">2nd June 2024 - 1st August 2024</p>
                 <p>Worked as a Cybersecurity Analyst Intern in the ISG department, focusing on web application security and vulnerability assessment. Conducted OWASP Top 10 security testing on Indian Railways web applications, including AIMS Test IPAS and e-Drishti. Also analyzed API session handling and duplication risks in IRCTC-related systems and suggested mitigation strategies.</p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ PROJECTS ]"></h2>
@@ -796,7 +609,6 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
     <section id="certifications" style="padding: 120px 0;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ CERTIFICATIONS ]"></h2>
@@ -841,7 +653,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" style="padding: 120px 0 150px;">
         <div class="glass-card">
             <h2 class="typing" data-text="[ INITIATE UPLINK ]"></h2>
@@ -853,7 +664,6 @@
         </div>
     </section>
 
-    <!-- Certificate Modal -->
     <div id="certModal" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -861,9 +671,7 @@
             <div id="modalInfo"></div>
         </div>
     </div>
-
     <script>
-        // Starfield Animation
         const canvas = document.getElementById('starfield');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -918,7 +726,6 @@
             createParticles();
         });
 
-        // Decryption Effect for Hero Name
         const heroName = document.getElementById('heroName');
         const finalText = 'ARINDAM SINGH';
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
@@ -929,157 +736,133 @@
             
             let iterations = 0;
             const maxIterations = finalText.length;
-            
             const interval = setInterval(() => {
-                heroName.textContent = finalText
-                    .split('')
-                    .map((char, index) => {
-                        if (char === ' ') return ' ';
-                        if (index < iterations) {
-                            return finalText[index];
-                        }
-                        return characters[Math.floor(Math.random() * characters.length)];
-                    })
-                    .join('');
-        
-                if (iterations >= maxIterations) {
-                    clearInterval(interval);
-                    heroName.textContent = finalText;
-                    heroName.classList.remove('decrypting');
-                    decryptionComplete = true;
-                }
-        
-                iterations += 1/3;
-            }, 50);
-        }
-        
-        // Start decryption effect on page load
-        window.addEventListener('load', () => {
-            heroName.classList.add('decrypting');
-            setTimeout(decryptText, 500);
-        });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Navbar Proximity Magnification
-        const navItems = document.querySelectorAll('nav ul li');
-        navItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.15)';
-            });
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
-
-        // Intersection Observer for Fade-in Animation
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const glassCards = document.querySelectorAll('.glass-card');
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        glassCards.forEach(card => cardObserver.observe(card));
-
-        // Typing Animation with IntersectionObserver
-        const typingHeadings = document.querySelectorAll('h2.typing');
-        const typedHeadings = new Set();
-
-        function typeText(element, text, index = 0) {
-            if (index < text.length) {
-                element.innerHTML = text.substring(0, index + 1) + '<span class="cursor">|</span>';
-                setTimeout(() => typeText(element, text, index + 1), 80);
-            } else {
-                element.innerHTML = text;
+            heroName.textContent = finalText
+                .split('')
+                .map((char, index) => {
+                    if (char === ' ') return ' ';
+                    if (index < iterations) {
+                        return finalText[index];
+                    }
+                    return characters[Math.floor(Math.random() * characters.length)];
+                })
+                .join('');
+    
+            if (iterations >= maxIterations) {
+                clearInterval(interval);
+                heroName.textContent = finalText;
+                heroName.classList.remove('decrypting');
+                decryptionComplete = true;
             }
+    
+            iterations += 1/3;
+        }, 50);
+    }
+    
+    window.addEventListener('load', () => {
+        heroName.classList.add('decrypting');
+        setTimeout(decryptText, 500);
+    });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    const navItems = document.querySelectorAll('nav ul li');
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.15)';
+        });
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const glassCards = document.querySelectorAll('.glass-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    glassCards.forEach(card => cardObserver.observe(card));
+
+    const typingHeadings = document.querySelectorAll('h2.typing');
+    const typedHeadings = new Set();
+
+    function typeText(element, text, index = 0) {
+        if (index < text.length) {
+            element.innerHTML = text.substring(0, index + 1) + '<span class="cursor">|</span>';
+            setTimeout(() => typeText(element, text, index + 1), 80);
+        } else {
+            element.innerHTML = text;
         }
+    }
 
-        const typingObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !typedHeadings.has(entry.target)) {
-                    typedHeadings.add(entry.target);
-                    const text = entry.target.getAttribute('data-text');
-                    entry.target.innerHTML = '<span class="cursor">|</span>';
-                    setTimeout(() => typeText(entry.target, text), 300);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        typingHeadings.forEach(heading => typingObserver.observe(heading));
-
-        // Skill Bar Animation
-        const skillBars = document.querySelectorAll('.skill-bar-fill');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.getAttribute('data-width');
-                    entry.target.style.width = width + '%';
-                    skillObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        skillBars.forEach(bar => {
-            bar.style.width = '0%';
-            skillObserver.observe(bar);
+    const typingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !typedHeadings.has(entry.target)) {
+                typedHeadings.add(entry.target);
+                const text = entry.target.getAttribute('data-text');
+                entry.target.innerHTML = '<span class="cursor">|</span>';
+                setTimeout(() => typeText(entry.target, text), 300);
+            }
         });
+    }, { threshold: 0.5 });
 
-        // Certificate Modal
-        const modal = document.getElementById('certModal');
-        const modalClose = document.querySelector('.modal-close');
-        const certCards = document.querySelectorAll('.cert-card');
+    typingHeadings.forEach(heading => typingObserver.observe(heading));
 
-        certCards.forEach(card => {
-            card.addEventListener('click', function(e) {
-                if (e.target.tagName !== 'A') {
-                    const certId = this.getAttribute('data-cert');
-                    const title = this.querySelector('h3').textContent;
-                    const issuer = this.querySelector('.issuer').textContent;
-                    const verifyLink = this.querySelector('a').href;
-                    
-                    document.getElementById('modalImage').src = `assets/Certificates/${certId}.jpg`;
-                    document.getElementById('modalInfo').innerHTML = `
-                        <h3 style="color: var(--neon-green); margin-bottom: 10px;">${title}</h3>
-                        <p style="color: #909090; margin-bottom: 15px;">${issuer}</p>
-                        <a href="${verifyLink}" target="_blank" style="color: var(--neon-green); text-decoration: none;">Verify Certificate ↗</a>
-                    `;
-                    modal.classList.add('active');
-                }
-            });
+    const modal = document.getElementById('certModal');
+    const modalClose = document.querySelector('.modal-close');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    certCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.tagName !== 'A') {
+                const certId = this.getAttribute('data-cert');
+                const title = this.querySelector('h3').textContent;
+                const issuer = this.querySelector('.issuer').textContent;
+                const verifyLink = this.querySelector('a').href;
+                
+                document.getElementById('modalImage').src = `assets/Certificates/${certId}.jpg`;
+                document.getElementById('modalInfo').innerHTML = `
+                    <h3 style="color: var(--neon-green); margin-bottom: 10px;">${title}</h3>
+                    <p style="color: #909090; margin-bottom: 15px;">${issuer}</p>
+                    <a href="${verifyLink}" target="_blank" style="color: var(--neon-green); text-decoration: none;">Verify Certificate ↗</a>
+                `;
+                modal.classList.add('active');
+            }
         });
+    });
 
-        modalClose.addEventListener('click', () => {
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
             modal.classList.remove('active');
-        });
+        }
+    });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-            }
-        });
-    </script>
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>
